@@ -1,0 +1,138 @@
+@import "mixins";
+
+body {
+    background-color: #1E90FF;
+
+    main {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        height: 98vh;
+        grid-template-areas:
+            "description calculator";
+        grid-gap: 20px;
+
+    }
+}
+
+
+//DESCRIPTION----------------------------------------------------------------------------------
+.description {
+    grid-area: description;
+    background-color: #125799;
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 800px;
+
+    .description__h1 {
+        @include latoBold;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .description__p {
+        @include latoLight;
+        font-size: 1.5rem;
+    }
+
+    .description__h2 {
+        @include latoBold;
+    }
+
+    .description__ul {
+        margin-top: -10px;
+        @include latoLight;
+    }
+}
+
+
+//CALCULATOR---------------------------------------------------------------------------------------------
+.calculator {
+    grid-area: calculator;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Main calculator content container
+    .calculator--container {
+        background-color: #0D3966;
+        width: 500px;
+        height: 700px;
+        border: 0px solid transparent;
+        border-radius: 4px;
+        display: grid;
+        grid-auto-rows: 0px 150px 1fr;
+        grid-template-areas:
+            "."
+            "screen"
+            "buttons";
+        grid-gap: 30px;
+        padding: 10px;
+
+        // Refers to the screen area 
+        .calculator__screen {
+            grid-area: screen;
+            background-color: #131f2e;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding-right: 5px;
+            @include latoBold;
+
+            // It is a class shared between the inputs that are inside the screen
+            .calculator__screens {
+                background-color: transparent;
+                border: none;
+                width: 100%;
+                text-align: right;
+                font-size: 2rem;
+                color: white;
+            }
+
+            .calculator__screen2 {
+                color: #5C8DE0;
+            }
+
+            .calculator__screen3 {
+                color: gray;
+            }
+        }
+
+
+        // Area destined to occupy the calculator buttons
+        .calculator__buttons {
+            grid-area: buttons;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+
+            // Refers to buttons that execute operations
+            .button__operation {
+                border: 0px solid transparent;
+                border-radius: 4px;
+                background-color: rgba(112, 162, 255, 0.795);
+                @include latoBold;
+                font-size: 1.5rem;
+            }
+
+            // Refers to buttons that are numbers
+            .button__num {
+                @extend .button__operation;
+                background-color: rgba(91, 140, 224, 0.575);
+            }
+
+
+            .button0 {
+                grid-area: 5/2;
+            }
+
+            .button__lastOperation {
+                grid-area: 5/4;
+            }
+        }
+    }
+}

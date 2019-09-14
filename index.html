@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content ="https://github.com/Sheansuke">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <main>
+        <!-- Description section -->
+        <section class="description">
+
+            <h1 class="description__h1">CALCULATOR</h1>
+
+            <p class="description__p">This calculator has been made
+                                for the purpose of practice, use
+                                a construction class to do its
+                                more dynamic use</p>
+
+            <h2 class="description__h2">Technologies used:</h2>
+            <ul class="description__ul">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>SASS</li>
+                <li>JavaScript/TypeScript</li>
+            </ul>
+
+            <p class="description__p">You can download the full example or
+                                the typescript file only in this
+                                address: <a href="https://github.com/Sheansuke/calculator">https://github.com/Sheansuke/calculator</a></p>
+
+        </section>
+
+        <!-- Calculator section  -->
+        <section class="calculator">
+
+            <!-- main container of calculator actions -->
+            <div class="calculator--container">
+
+                <!-- screen container -->
+                <div class="calculator__screen">
+                    <input class="calculator__screens calculator__screen3" id="screen3" />
+                    <input class="calculator__screens calculator__screen2" id="screen2" />
+                    <input class="calculator__screens calculator__screen1" id="screen1" />
+                </div>
+
+                <!-- button container -->
+                <div class="calculator__buttons">
+
+                    <!-- Row 1 -->
+                    <button class="button__operation" onclick="cal.specialSymbol('ce')">CE</button>
+                    <button class="button__operation" onclick="cal.specialSymbol('c')">C</button>
+                    <button class="button__operation" onclick="cal.specialSymbol('<')">
+                        <</button> <button class="button__operation" onclick="cal.calOp('+')"> +
+                    </button>
+
+                    <!-- Row 2 -->
+                    <button class="button__num button7" onclick="cal.calNum(7)">7</button>
+                    <button class="button__num  button8" onclick="cal.calNum(8)">8</button>
+                    <button class="button__num  button9" onclick="cal.calNum(9)">9</button>
+                    <button class="button__operation  button-" onclick="cal.calOp('-')">-</button>
+
+                    <!-- Row 3 -->
+                    <button class="button__num  button4" onclick="cal.calNum(4)">4</button>
+                    <button class="button__num  button5" onclick="cal.calNum(5)">5</button>
+                    <button class="button__num  button6" onclick="cal.calNum(6)">6</button>
+                    <button class="button__operation button*" onclick="cal.calOp('*')">*</button>
+
+                    <!-- Row 4 -->
+                    <button class="button__num  button1" onclick="cal.calNum(1)">1</button>
+                    <button class="button__num  button2" onclick="cal.calNum(2)">2</button>
+                    <button class="button__num  button3" onclick="cal.calNum(3)">3</button>
+                    <button class="button__operation  button/" onclick="cal.calOp('/')">/</button>
+
+                    <!-- Row 5 -->
+                    <button class="button__num  button0" onclick="cal.calNum(0)">0</button>
+                    <button class="button__operation  button__lastOperation" onclick="cal.calOp('=')">=</button>
+                </div>
+            </div>
+        </section>
+
+
+        <script src="js/app.js"></script>
+
+    </main>
+
+</body>
+
+</html>

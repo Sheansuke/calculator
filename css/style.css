@@ -1,0 +1,135 @@
+body {
+  background-color: #1E90FF; }
+  body main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.5fr 20px 1fr;
+    grid-template-columns: 0.5fr 1fr;
+    height: 98vh;
+    grid-template-areas: "description calculator";
+    grid-gap: 20px; }
+
+.description {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: description;
+  background-color: #125799;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: justify;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 800px; }
+  .description .description__h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 3rem;
+    text-align: center; }
+  .description .description__p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    color: white;
+    font-size: 1.5rem; }
+  .description .description__h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: white; }
+  .description .description__ul {
+    margin-top: -10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    color: white; }
+
+.calculator {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: calculator;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .calculator .calculator--container {
+    background-color: #0D3966;
+    width: 500px;
+    height: 700px;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-rows: 0px 150px 1fr;
+    grid-template-areas: "." "screen" "buttons";
+    grid-gap: 30px;
+    padding: 10px; }
+    .calculator .calculator--container .calculator__screen {
+      -ms-grid-row: 3;
+      -ms-grid-column: 1;
+      grid-area: screen;
+      background-color: #131f2e;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      padding-right: 5px;
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+      color: white; }
+      .calculator .calculator--container .calculator__screen .calculator__screens {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        text-align: right;
+        font-size: 2rem;
+        color: white; }
+      .calculator .calculator--container .calculator__screen .calculator__screen2 {
+        color: #5C8DE0; }
+      .calculator .calculator--container .calculator__screen .calculator__screen3 {
+        color: gray; }
+    .calculator .calculator--container .calculator__buttons {
+      -ms-grid-row: 5;
+      -ms-grid-column: 1;
+      grid-area: buttons;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 10px; }
+      .calculator .calculator--container .calculator__buttons .button__operation, .calculator .calculator--container .calculator__buttons .button__num {
+        border: 0px solid transparent;
+        border-radius: 4px;
+        background-color: rgba(112, 162, 255, 0.795);
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+        color: white;
+        font-size: 1.5rem; }
+      .calculator .calculator--container .calculator__buttons .button__num {
+        background-color: rgba(91, 140, 224, 0.575); }
+      .calculator .calculator--container .calculator__buttons .button0 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 2;
+        grid-area: 5/2; }
+      .calculator .calculator--container .calculator__buttons .button__lastOperation {
+        -ms-grid-row: 5;
+        -ms-grid-column: 4;
+        grid-area: 5/4; }
