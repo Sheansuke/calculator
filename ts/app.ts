@@ -1,6 +1,10 @@
 class calculator {
+
+    //Operations
     private calTotalSum: number = 0; // Variable that stores the operations
     private lastOperation: string = ""; // Detect the last operation used
+
+    //View
     private calScreenTotal: any; // DOM element that will show the total operation
     private calScreen: any; // DOM element that will show what has been pressed
     private calScreenConcat: string = ""; // DOM element that shows what has been done
@@ -25,6 +29,8 @@ class calculator {
                 this.calScreen.value = "";
                 this.calScreenTotal.value = "";
                 this.calScreenConcat.value = "";
+                this.calTotalSum = 0;
+                this.lastOperation  = "";
                 break;
 
             case "c":
@@ -42,9 +48,10 @@ class calculator {
     // Function that executes the operations receives a string with the sign of the operation to execute
     public calOp(operation: string) {
         switch (operation) {
+
             // Addition operation
             case "+":
-                this.calTotalSum ? this.calTotalSum += Number(this.calScreen.value) : this.calTotalSum = Number(this.calScreen.value);
+                this.calTotalSum? this.calTotalSum += Number(this.calScreen.value) : this.calTotalSum = Number(this.calScreen.value);
                 this.lastOperation = operation;
                 this.calScreenTotal.value = this.calTotalSum + this.lastOperation;
                 this.calScreen.value ? this.calScreenConcat.value += this.calScreen.value + this.lastOperation : null;
@@ -53,16 +60,18 @@ class calculator {
 
             // Subtraction operation
             case "-":
-                this.calTotalSum ? this.calTotalSum -= Number(this.calScreen.value) : this.calTotalSum = Number(this.calScreen.value);
+                this.calTotalSum? this.calTotalSum -= Number(this.calScreen.value) : this.calTotalSum = Number(this.calScreen.value);
                 this.lastOperation = operation;
                 this.calScreenTotal.value = this.calTotalSum + this.lastOperation;
                 this.calScreen.value ? this.calScreenConcat.value += this.calScreen.value + this.lastOperation : null;
                 this.calScreen.value = "";
+                
                 break;
 
             // Multiplication operation
             case "*":
-                this.calTotalSum ? this.calTotalSum *= Number(this.calScreen.value) : this.calTotalSum = Number(this.calScreen.value);
+                this.calScreen.value? this.calTotalSum *= Number(this.calScreen.value):null;
+                this.calTotalSum? null : this.calTotalSum = Number(this.calScreen.value);
                 this.lastOperation = operation;
                 this.calScreenTotal.value = this.calTotalSum + this.lastOperation;
                 this.calScreen.value ? this.calScreenConcat.value += this.calScreen.value + this.lastOperation : null;
@@ -71,7 +80,8 @@ class calculator {
 
             // Division operation 
             case "/":
-                this.calTotalSum ? this.calTotalSum /= Number(this.calScreen.value) : this.calTotalSum = Number(this.calScreen.value);
+                this.calScreen.value? this.calTotalSum /= Number(this.calScreen.value):null;
+                this.calTotalSum? null : this.calTotalSum = Number(this.calScreen.value);
                 this.lastOperation = operation;
                 this.calScreenTotal.value = this.calTotalSum + this.lastOperation;
                 this.calScreen.value ? this.calScreenConcat.value += this.calScreen.value + this.lastOperation : null;
